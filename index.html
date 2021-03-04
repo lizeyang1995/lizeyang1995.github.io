@@ -166,11 +166,9 @@
       
         <h2 id="静态服务"><a href="#静态服务" class="headerlink" title="静态服务"></a>静态服务</h2><p>主要提供静态资源，不同用户访问到的资源相同</p>
 <h2 id="动态服务"><a href="#动态服务" class="headerlink" title="动态服务"></a>动态服务</h2><p>提供动态服务，不同用户访问到的资源不同</p>
-<h2 id="服务器叫法"><a href="#服务器叫法" class="headerlink" title="服务器叫法"></a>服务器叫法</h2><p><strong>web服务器</strong>：广义上来说，就是响应用户的需求，提供服务，当下所有的服务器软件都可以称之为web服务器软件<br><strong>HTTP服务器</strong>：(静态服务) 使用HTTP协议传输资源，提供服务<br><strong>应用服务器</strong>：(动态服务) 一个特定应用的承载容器</p>
-<h2 id="常见服务器"><a href="#常见服务器" class="headerlink" title="常见服务器"></a>常见服务器</h2><p>1、Nginx：典型的静态服务器，可做反向代理、负载均衡，一般放在最前面直面用户，和后端Tomcat打配合；纯C写的，性能贼高、内存消耗极少、稳定性也相当好，互联网公司重度使用<br>2、Tengine：阿里出品，基于Nginx服务器做的改造(加强和封装)，对大流量场景做了很多高级功能，性能、稳定性优秀<br>3、Apache http server：也是静态服务器，但是不如Nginx<br>3、IIS：微软开发，只能用在Windows下，具有应用服务器能力的http服务器<br>4、Tomcat：Apache出品，典型的应用服务器软件，符合Servlet标准的应用容器，也可以提供http服务，但一般不会作为http服务器；是Spring Boot框架默认的内置服务器<br>5、Jetty：跟Tomcat是一个性质的东西，符合Servlet标准的应用容器，也是Spring Boot框架支持的服务器，但不是默认的<br>6、Undertow：红帽子出品，跟Tomcat、Jetty一样也是Spring Boot框架支持的服务器，但不是默认的；高并发时性能优于Tomcat、Jetty</p>
-<p>几款商用重量级的服务器软件：<br>1、JBoss(从8版开始更名为WildFly)：不仅是Servlet应用容器，更是EJB的应用容器，整套JavaEE框架部署的解决方案<br>2、WebLogic：Oracle公司出品，用于部署企业级JavaEE应用，全能型，几乎支持JavaEE所有的应用规范<br>3、WebSphere：IBM公司出品，支持更多JavaEE的应用规范的综合应用服务器
- </p>
-
+        
+          <a class="article-more-a" href="/2021/03/04/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/#more">more >></a>
+        
       
 
       
@@ -245,10 +243,9 @@
       
         <h2 id="1、安装Node-js"><a href="#1、安装Node-js" class="headerlink" title="1、安装Node.js"></a>1、安装Node.js</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">https://nodejs.org/zh-cn/</a></p>
 <h2 id="2、安装HEXO"><a href="#2、安装HEXO" class="headerlink" title="2、安装HEXO"></a>2、安装HEXO</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a><br>安装<strong>npm install hexo-cli -g</strong></p>
-<h2 id="3、创建博客"><a href="#3、创建博客" class="headerlink" title="3、创建博客"></a>3、创建博客</h2><p>自己创个目录，比如blog，所有博客相关的东西全在这，进入该目录再<strong>hexo init</strong><br>启动该服务<strong>hexo server</strong><br>创建一篇新的博客，在该目录比如<strong>hexo new “My New Post”<strong>这将会在该目录下的source的_posts创建一个名为My New Post的md文件<br>在用VScode进行编辑后，可以用</strong>hexo clean</strong>清理一下，这主要是清除缓存文件 (public) 和已生成的静态文件 (db.json)。在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。<br><strong>hexo generate</strong>生成静态文件<br><img src="/assets/blogImg/createStaticFile.png" alt="生成静态文件"></p>
-<h2 id="4、部署"><a href="#4、部署" class="headerlink" title="4、部署"></a>4、部署</h2><p>部署到git上，先安装<strong>npm install –save hexo-deployer-git</strong>，并且在git上创建一个仓库，并且仓库的名字必须以自己的git名开头<br><img src="/assets/blogImg/createRepository.png" alt="创建git仓库"><br>修改blog文件下的_config.yml文件<br><img src="/assets/blogImg/modifyConfigFile.png" alt="修改配置文件"><br>然后再<strong>hexo deploy</strong>，之后只要输入<strong>lizeyang1995.github.io</strong>就能访问了</p>
-<h2 id="5、修改主题"><a href="#5、修改主题" class="headerlink" title="5、修改主题"></a>5、修改主题</h2><p>修改博客的主题，比如<a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">https://github.com/litten/hexo-theme-yilia</a><br>克隆到themes文件下<br><img src="/assets/blogImg/cloneTheme.png" alt="clone地址"><br>然后修改_config.yml文件<br><img src="/assets/blogImg/modifyTheme.png" alt="修改主题"><br>最后<strong>hexo clean</strong>一下，<strong>hexo generate</strong>一下，再<strong>hexo deploy</strong>一下就推到远端了</p>
-
+        
+          <a class="article-more-a" href="/2021/03/02/%E5%88%9B%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/#more">more >></a>
+        
       
 
       

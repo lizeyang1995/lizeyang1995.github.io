@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>创建Hexo博客 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、安装Node.jshttps:&#x2F;&#x2F;nodejs.org&#x2F;zh-cn&#x2F; 2、安装HEXOhttps:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;安装npm install hexo-cli -g 3、创建博客自己创个目录，比如blog，所有博客相关的东西全在这，进入该目录再hexo init启动该服务hexo server创建一篇新的博客，在该目录比如hexo new “My New Post”这将会在该目">
+  <meta name="description" content="1、安装Node.jshttps:&#x2F;&#x2F;nodejs.org&#x2F;zh-cn&#x2F; 2、安装HEXOhttps:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;安装npm install hexo-cli -g">
 <meta property="og:type" content="article">
 <meta property="og:title" content="创建Hexo博客">
 <meta property="og:url" content="http://example.com/2021/03/02/%E5%88%9B%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1、安装Node.jshttps:&#x2F;&#x2F;nodejs.org&#x2F;zh-cn&#x2F; 2、安装HEXOhttps:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;安装npm install hexo-cli -g 3、创建博客自己创个目录，比如blog，所有博客相关的东西全在这，进入该目录再hexo init启动该服务hexo server创建一篇新的博客，在该目录比如hexo new “My New Post”这将会在该目">
+<meta property="og:description" content="1、安装Node.jshttps:&#x2F;&#x2F;nodejs.org&#x2F;zh-cn&#x2F; 2、安装HEXOhttps:&#x2F;&#x2F;hexo.io&#x2F;zh-cn&#x2F;安装npm install hexo-cli -g">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/assets/blogImg/createStaticFile.png">
 <meta property="og:image" content="http://example.com/assets/blogImg/createRepository.png">
@@ -21,7 +21,7 @@
 <meta property="og:image" content="http://example.com/assets/blogImg/cloneTheme.png">
 <meta property="og:image" content="http://example.com/assets/blogImg/modifyTheme.png">
 <meta property="article:published_time" content="2021-03-02T07:04:48.000Z">
-<meta property="article:modified_time" content="2021-03-03T09:30:57.888Z">
+<meta property="article:modified_time" content="2021-03-04T08:49:12.794Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -175,6 +175,8 @@
       
         <h2 id="1、安装Node-js"><a href="#1、安装Node-js" class="headerlink" title="1、安装Node.js"></a>1、安装Node.js</h2><p><a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/">https://nodejs.org/zh-cn/</a></p>
 <h2 id="2、安装HEXO"><a href="#2、安装HEXO" class="headerlink" title="2、安装HEXO"></a>2、安装HEXO</h2><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">https://hexo.io/zh-cn/</a><br>安装<strong>npm install hexo-cli -g</strong></p>
+<span id="more"></span>
+
 <h2 id="3、创建博客"><a href="#3、创建博客" class="headerlink" title="3、创建博客"></a>3、创建博客</h2><p>自己创个目录，比如blog，所有博客相关的东西全在这，进入该目录再<strong>hexo init</strong><br>启动该服务<strong>hexo server</strong><br>创建一篇新的博客，在该目录比如<strong>hexo new “My New Post”<strong>这将会在该目录下的source的_posts创建一个名为My New Post的md文件<br>在用VScode进行编辑后，可以用</strong>hexo clean</strong>清理一下，这主要是清除缓存文件 (public) 和已生成的静态文件 (db.json)。在某些情况（尤其是更换主题后），如果发现您对站点的更改无论如何也不生效，您可能需要运行该命令。<br><strong>hexo generate</strong>生成静态文件<br><img src="/assets/blogImg/createStaticFile.png" alt="生成静态文件"></p>
 <h2 id="4、部署"><a href="#4、部署" class="headerlink" title="4、部署"></a>4、部署</h2><p>部署到git上，先安装<strong>npm install –save hexo-deployer-git</strong>，并且在git上创建一个仓库，并且仓库的名字必须以自己的git名开头<br><img src="/assets/blogImg/createRepository.png" alt="创建git仓库"><br>修改blog文件下的_config.yml文件<br><img src="/assets/blogImg/modifyConfigFile.png" alt="修改配置文件"><br>然后再<strong>hexo deploy</strong>，之后只要输入<strong>lizeyang1995.github.io</strong>就能访问了</p>
 <h2 id="5、修改主题"><a href="#5、修改主题" class="headerlink" title="5、修改主题"></a>5、修改主题</h2><p>修改博客的主题，比如<a target="_blank" rel="noopener" href="https://github.com/litten/hexo-theme-yilia">https://github.com/litten/hexo-theme-yilia</a><br>克隆到themes文件下<br><img src="/assets/blogImg/cloneTheme.png" alt="clone地址"><br>然后修改_config.yml文件<br><img src="/assets/blogImg/modifyTheme.png" alt="修改主题"><br>最后<strong>hexo clean</strong>一下，<strong>hexo generate</strong>一下，再<strong>hexo deploy</strong>一下就推到远端了</p>
