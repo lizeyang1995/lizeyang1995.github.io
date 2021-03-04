@@ -144,6 +144,85 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-服务器介绍" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/03/04/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/">服务器介绍</a>
+    </h1>
+  
+
+        
+        <a href="/2021/03/04/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
+  	<time datetime="2021-03-04T08:04:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="静态服务"><a href="#静态服务" class="headerlink" title="静态服务"></a>静态服务</h2><p>主要提供静态资源，不同用户访问到的资源相同</p>
+<h2 id="动态服务"><a href="#动态服务" class="headerlink" title="动态服务"></a>动态服务</h2><p>提供动态服务，不同用户访问到的资源不同</p>
+<h2 id="服务器叫法"><a href="#服务器叫法" class="headerlink" title="服务器叫法"></a>服务器叫法</h2><p><strong>web服务器</strong>：广义上来说，就是响应用户的需求，提供服务，当下所有的服务器软件都可以称之为web服务器软件<br>**HTTP服务器(静态服务)**：使用HTTP协议传输资源，提供服务<br>**应用服务器(动态服务)**：一个特定应用的承载容器</p>
+<h2 id="常见服务器"><a href="#常见服务器" class="headerlink" title="常见服务器"></a>常见服务器</h2><p>1、Nginx：典型的静态服务器，可做反向代理、负载均衡，一般放在最前面直面用户，和后端Tomcat打配合；纯C写的，性能贼高、内存消耗极少、稳定性也相当好，互联网公司重度使用<br>2、Tengine：阿里出品，基于Nginx服务器做的改造(加强和封装)，对大流量场景做了很多高级功能，性能、稳定性优秀<br>3、Apache http server：也是静态服务器，但是不如Nginx<br>3、IIS：微软开发，只能用在Windows下，具有应用服务器能力的http服务器<br>4、Tomcat：Apache出品，典型的应用服务器软件，符合Servlet标准的应用容器，也可以提供http服务，但一般不会作为http服务器；是Spring Boot框架默认的内置服务器<br>5、Jetty：跟Tomcat是一个性质的东西，符合Servlet标准的应用容器，也是Spring Boot框架支持的服务器，但不是默认的<br>6、Undertow：红帽子出品，跟Tomcat、Jetty一样也是Spring Boot框架支持的服务器，但不是默认的；高并发时性能优于Tomcat、Jetty</p>
+<p>几款商用重量级的服务器软件：<br>1、JBoss(从8版开始更名为WildFly)：不仅是Servlet应用容器，更是EJB的应用容器，整套JavaEE框架部署的解决方案<br>2、WebLogic：Oracle公司出品，用于部署企业级JavaEE应用，全能型，几乎支持JavaEE所有的应用规范<br>3、WebSphere：IBM公司出品，支持更多JavaEE的应用规范的综合应用服务器
+ </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">server</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/03/04/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-创建Hexo博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -316,6 +395,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">server</a>
               </li>
             
             <div class="clearfix"></div>
