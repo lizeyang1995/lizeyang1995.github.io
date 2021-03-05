@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://example.com">
-  <title>Archives | Hexo</title>
+  <title>S3和DynamoDB的选择 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+  <meta name="description" content="DynamoDB1、低延迟访问2、对一组对象操作要么都成功要么都失败(Atomic operation)3、追加到现有的对象4、查询某个item5、大部分的item都小于4kb6、可以不断的更新旧的数据">
+<meta property="og:type" content="article">
+<meta property="og:title" content="S3和DynamoDB的选择">
+<meta property="og:url" content="http://example.com/2021/03/05/S3%E5%92%8CDynamoDB%E7%9A%84%E9%80%89%E6%8B%A9/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="DynamoDB1、低延迟访问2、对一组对象操作要么都成功要么都失败(Atomic operation)3、追加到现有的对象4、查询某个item5、大部分的item都小于4kb6、可以不断的更新旧的数据">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/assets/blogImg/s3AndDynamoDB.png">
+<meta property="article:published_time" content="2021-03-05T02:50:48.000Z">
+<meta property="article:modified_time" content="2021-03-05T03:24:57.770Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="AWS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/assets/blogImg/s3AndDynamoDB.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -142,36 +149,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-S3和DynamoDB的选择" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2021" class="archive-year">2021</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/05/S3%E5%92%8CDynamoDB%E7%9A%84%E9%80%89%E6%8B%A9/" class="archive-article-date">
-  	<time datetime="2021-03-05T02:50:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/05/S3%E5%92%8CDynamoDB%E7%9A%84%E9%80%89%E6%8B%A9/">S3和DynamoDB的选择</a>
+    <h1 class="article-title" itemprop="name">
+      S3和DynamoDB的选择
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2021/03/05/S3%E5%92%8CDynamoDB%E7%9A%84%E9%80%89%E6%8B%A9/" class="archive-article-date">
+  	<time datetime="2021-03-05T02:50:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
+</a>
+        
+        
+          <span class="archive-article-date">
+              阅读量 <span id="busuanzi_value_page_pv"></span>
+          </span>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>DynamoDB</strong><br>1、低延迟访问<br>2、对一组对象操作要么都成功要么都失败(Atomic operation)<br>3、追加到现有的对象<br>4、查询某个item<br>5、大部分的item都小于4kb<br>6、可以不断的更新旧的数据</p>
+<span id="more"></span>
+
+<p><strong>S3</strong><br>1、item大小没有特殊要求<br>2、需要版本控制和更改历史<br>3、不可预测的突发流量模式<br>4、大部分都是二进制内容<br>4、使用https服务项目<br>5、便宜<br>6、如果两个进程试图一次写入S3（同一记录的两个不同版本），则任何一个版本都可能长期保存。</p>
+<p>AWS文档：<br>如果您的应用程序需要在项目中存储超出DynamoDB大小限制允许的数据，则可以尝试压缩一个或多个大属性，也可以将它们作为对象存储在Amazon Simple Storage Service（Amazon S3）中并存储为DynamoDB项目中的对象标识符。<br><img src="/assets/blogImg/s3AndDynamoDB.png" alt="s3当作DynamoDB的一部分"></p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://stacks.wellcomecollection.org/creating-a-data-store-from-s3-and-dynamodb-8bb9ecce8fc1">https://stacks.wellcomecollection.org/creating-a-data-store-from-s3-and-dynamodb-8bb9ecce8fc1</a><br><a target="_blank" rel="noopener" href="https://serverless.pub/s3-or-dynamodb/">https://serverless.pub/s3-or-dynamodb/</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -183,133 +220,128 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://example.com/2021/03/05/S3%E5%92%8CDynamoDB%E7%9A%84%E9%80%89%E6%8B%A9/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/05/Npm%20Install%E7%A7%8D%E7%B1%BB/" class="archive-article-date">
-  	<time datetime="2021-03-05T02:04:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2021/03/05/Npm%20Install%E7%A7%8D%E7%B1%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Npm Install种类</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/05/Npm%20Install%E7%A7%8D%E7%B1%BB/">Npm Install种类</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">npm</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/04/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/" class="archive-article-date">
-  	<time datetime="2021-03-04T08:04:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-04</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/04/%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%BB%8B%E7%BB%8D/">服务器介绍</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">server</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2021/03/02/%E5%88%9B%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/" class="archive-article-date">
-  	<time datetime="2021-03-02T07:04:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-03-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2021/03/02/%E5%88%9B%E5%BB%BAHexo%E5%8D%9A%E5%AE%A2/">创建Hexo博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
+    <section id="comments" style="margin:10px;padding:10px;background:#fff;">
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "GTTSL5uLdGK38r7eFsRwaedv-gzGzoHsz",
+            app_key: "GdlRNvzNEqPjlBoE3R6X6mjh",
+            placeholder: "欢迎畅所欲言",
+            avatar:"mm"
+        });
+    }
+</script>
+    </section>
   
-
-    
 
 
           </div>
@@ -339,8 +371,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
